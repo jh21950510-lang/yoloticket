@@ -14,8 +14,11 @@
   <meta property="og:url" content="https://phone-bankpay.com" />
   <meta property="og:site_name" content="욜로티켓" />
 
-  <link id="dynamic-favicon" rel="icon" type="image/png" href="/yoloticket_hero.png" />
-  <link id="dynamic-apple-icon" rel="apple-touch-icon" href="/yoloticket_hero.png" />
+  <!-- 새로 올리신 강아지 파비콘 전용 파일 연결 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="shortcut icon" href="/favicon.png" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
@@ -43,7 +46,7 @@
       color: #1e293b;
     }
 
-    /* '욜로티켓' 전용 귀여운 이미지 스타일 폰트 (획 잘림 방지 여백 및 줄간격 적용) */
+    /* '욜로티켓' 전용 귀여운 이미지 스타일 폰트 */
     .yolo-font {
       font-family: 'OngleipKonkon', 'Cafe24Ssurround', cursive, sans-serif;
       letter-spacing: 0.02em;
@@ -91,7 +94,7 @@
       <!-- 좌측 욜로티켓 로고 영역 (강아지 캐릭터 아이콘 + 이미지 폰트 욜로티켓) -->
       <a href="/" class="flex items-center gap-2 group">
         <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-purple-200 bg-white shadow-sm flex items-center justify-center flex-shrink-0">
-          <img src="/yoloticket_hero.png" alt="욜로티켓 강아지 로고" class="dog-avatar-crop" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <img src="/favicon.png" alt="욜로티켓 강아지 로고" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
           <span class="hidden w-full h-full bg-gradient-to-tr from-indigo-600 to-purple-500 text-white items-center justify-center text-sm font-black">Y</span>
         </div>
         <span class="yolo-font gradient-text text-3xl md:text-[32px] tracking-tight group-hover:opacity-85 transition">욜로티켓</span>
@@ -352,7 +355,7 @@
         <span class="yolo-font font-normal text-4xl md:text-[42px] align-middle">욜로티켓</span>만의 특별한 장점
       </h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto font-medium">
         <div class="bg-white rounded-2xl p-6 card-shadow border border-white space-y-2.5">
           <div class="flex items-center gap-2 font-extrabold text-sm text-slate-900">
             <i class="fa-solid fa-sack-dollar text-amber-500"></i>
@@ -401,7 +404,7 @@
         소액결제 현금화 이용 방법
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start relative">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start relative font-medium">
         <!-- STEP 1 -->
         <div class="text-center space-y-3">
           <div class="w-12 h-12 mx-auto rounded-full purple-btn text-white font-black text-lg flex items-center justify-center shadow-md">
@@ -452,7 +455,7 @@
     </section>
 
     <!-- 8. 욜로티켓 소액결제 미납 정책 솔루션 -->
-    <section class="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-10 card-shadow border-2 border-rose-100/80 space-y-8">
+    <section class="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-10 card-shadow border-2 border-rose-100/80 space-y-8 font-medium">
       <div class="text-center space-y-2">
         <h2 class="text-2xl md:text-3xl font-black text-slate-900">
           <span class="yolo-font font-normal text-4xl md:text-[42px] align-middle">욜로티켓</span> 소액결제 미납 정책 솔루션
@@ -532,7 +535,7 @@
         자주 묻는 질문
       </h2>
 
-      <div class="space-y-3">
+      <div class="space-y-3 font-medium">
         <div class="bg-white rounded-2xl p-6 card-shadow border border-white space-y-1.5">
           <h3 class="font-extrabold text-sm text-slate-900 flex items-center gap-2">
             <i class="fa-solid fa-lightbulb text-amber-400"></i>
@@ -596,12 +599,12 @@
     </section>
 
     <!-- 10. 정보이용료 현금화도 "욜로티켓" 배너 섹션 -->
-    <section id="info-fee" class="max-w-4xl mx-auto bg-white/80 backdrop-blur rounded-3xl p-8 md:p-10 card-shadow border border-white grid grid-cols-1 md:grid-cols-2 gap-8 items-center scroll-mt-20">
+    <section id="info-fee" class="max-w-4xl mx-auto bg-white/80 backdrop-blur rounded-3xl p-8 md:p-10 card-shadow border border-white grid grid-cols-1 md:grid-cols-2 gap-8 items-center scroll-mt-20 font-medium">
       <div class="space-y-4">
         <h2 class="text-2xl md:text-3xl font-black gradient-text">
           정보이용료 현금화도 "<span class="yolo-font font-normal text-4xl md:text-[42px] align-middle">욜로티켓</span>"
         </h2>
-        <p class="text-xs text-slate-600 leading-relaxed">
+        <p class="text-xs text-slate-600 leading-relaxed font-semibold">
           게임, 콘텐츠 구매에 사용하는 정보이용료도 쉽고 빠르게 현금으로 전환하세요. 소액결제와 동일하게 최대 90% 지급률과 5분 내 신속한 입금 서비스를 제공합니다.
         </p>
         <div class="flex flex-wrap gap-3 text-xs font-bold text-slate-700">
@@ -617,7 +620,7 @@
         </div>
       </div>
 
-      <div class="bg-white rounded-2xl p-6 shadow-sm border border-purple-50 space-y-4">
+      <div class="bg-white rounded-2xl p-6 shadow-sm border border-purple-50 space-y-4 font-semibold">
         <div class="flex items-start gap-3">
           <span class="w-5 h-5 rounded bg-emerald-500 text-white flex items-center justify-center text-[10px] mt-0.5 flex-shrink-0"><i class="fa-solid fa-check"></i></span>
           <div>
@@ -645,7 +648,7 @@
     </section>
 
     <!-- 11. 하단 24시간 문의 CTA 섹션 -->
-    <section class="text-center space-y-4 pt-4">
+    <section class="text-center space-y-4 pt-4 font-semibold">
       <h2 class="text-2xl md:text-3xl font-black gradient-text">
         언제든지 24시간 편하게 문의해주세요
       </h2>
@@ -653,7 +656,7 @@
         <span class="yolo-font text-lg text-slate-800">욜로티켓</span>과 함께라면 안전하고 빠른 소액결제 현금화가 가능합니다.<br />
         365일 24시간 언제든지 상담 가능합니다.
       </p>
-      <div class="pt-2">
+      <div class="pt-2 font-bold">
         <a href="https://yoloticket.channel.io" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 channel-btn text-white font-extrabold text-sm px-8 py-3.5 rounded-xl shadow-md transition transform hover:-translate-y-0.5">
           <span class="bg-white text-indigo-600 w-5 h-5 rounded-full flex items-center justify-center text-xs shadow-sm">
             <i class="fa-solid fa-comment-dots"></i>
@@ -666,7 +669,7 @@
   </main>
 
   <!-- 12. 하단 푸터 -->
-  <footer class="border-t border-purple-200/60 py-8 text-center text-xs text-slate-500 space-y-1.5">
+  <footer class="border-t border-purple-200/60 py-8 text-center text-xs text-slate-500 space-y-1.5 font-semibold">
     <p class="font-bold text-slate-700">© 2026 <span class="yolo-font text-base">욜로티켓</span>. All rights reserved.</p>
     <p class="text-[11px] text-slate-500">
       <i class="fa-solid fa-wand-magic-sparkles text-purple-400 mr-1"></i>
@@ -680,7 +683,7 @@
     <span class="bg-white text-indigo-600 w-8 h-8 rounded-xl flex items-center justify-center text-base shadow-sm">
       <i class="fa-solid fa-comment-dots"></i>
     </span>
-    <div class="text-left leading-tight">
+    <div class="text-left leading-tight font-extrabold">
       <div class="text-[10px] font-bold text-indigo-100">24시간 실시간</div>
       <div class="text-xs font-black tracking-tight">채널톡 상담</div>
     </div>
@@ -693,39 +696,6 @@
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
-    // yoloticket_hero.png에서 강아지 캐릭터만 원형 파비콘으로 자동 생성
-    (function createDogFavicon() {
-      const img = new Image();
-      img.crossOrigin = 'anonymous';
-      img.src = '/yoloticket_hero.png';
-      img.onload = function () {
-        const size = 64;
-        const canvas = document.createElement('canvas');
-        canvas.width = size;
-        canvas.height = size;
-        const ctx = canvas.getContext('2d');
-
-        // 원형 클리핑 및 흰색 배경
-        ctx.beginPath();
-        ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
-        ctx.closePath();
-        ctx.clip();
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, size, size);
-
-        // 강아지 캐릭터 위치만 정확히 확대해서 중앙 배치
-        const cropSize = img.width * 0.19;
-        const sx = img.width * 0.545 - cropSize / 2;
-        const sy = img.height * 0.432 - cropSize / 2;
-        ctx.drawImage(img, sx, sy, cropSize, cropSize, 0, 0, size, size);
-
-        const dataUrl = canvas.toDataURL('image/png');
-        const favicon = document.getElementById('dynamic-favicon');
-        const appleIcon = document.getElementById('dynamic-apple-icon');
-        if (favicon) favicon.href = dataUrl;
-        if (appleIcon) appleIcon.href = dataUrl;
-      };
-    })();
   </script>
 </body>
 </html>
