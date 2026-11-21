@@ -17,12 +17,21 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- 배너 이미지와 동일한 느낌의 둥글고 두꺼운 폰트(Jua) 및 본문 폰트(Pretendard) 로드 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
   <style>
     @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
     body {
       font-family: 'Pretendard', sans-serif;
       background: linear-gradient(180deg, #f3f0ff 0%, #eef4ff 25%, #f6effd 55%, #eef2ff 85%, #f5eeff 100%);
       color: #1e293b;
+    }
+    /* '욜로티켓' 전용 이미지 스타일 폰트 */
+    .yolo-font {
+      font-family: 'Jua', sans-serif;
+      letter-spacing: 0.02em;
     }
     .gradient-text {
       background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
@@ -44,13 +53,14 @@
     .card-shadow {
       box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.08), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
     }
-    /* yoloticket_hero.png 중앙의 강아지 캐릭터만 상단 로고 아이콘으로 깔끔하게 크롭 */
+    /* 강아지 캐릭터만 잘림 없이 원형 안에 정중앙으로 배치 */
     .dog-avatar-crop {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 54% 46%;
-      transform: scale(4.2);
+      object-position: 54.5% 43.2%;
+      transform: scale(5.4);
+      transform-origin: 54.5% 43.2%;
     }
   </style>
 </head>
@@ -59,13 +69,13 @@
   <!-- 1. 상단 고정 네비게이션 헤더 -->
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-purple-100/80">
     <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-      <!-- 좌측 욜로티켓 로고 영역 (강아지 캐릭터 아이콘 + 욜로티켓) -->
-      <a href="/" class="flex items-center gap-2 group">
-        <div class="w-9 h-9 rounded-full overflow-hidden border-2 border-purple-200 bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+      <!-- 좌측 욜로티켓 로고 영역 (강아지 캐릭터 아이콘 + 메인과 동일한 색상의 욜로티켓) -->
+      <a href="/" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-purple-200 bg-white shadow-sm flex items-center justify-center flex-shrink-0">
           <img src="/yoloticket_hero.png" alt="욜로티켓 강아지 로고" class="dog-avatar-crop" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
           <span class="hidden w-full h-full bg-gradient-to-tr from-indigo-600 to-purple-500 text-white items-center justify-center text-sm font-black">Y</span>
         </div>
-        <span class="font-black text-xl tracking-tight text-slate-900 group-hover:text-purple-600 transition">욜로티켓</span>
+        <span class="yolo-font gradient-text text-2xl md:text-[26px] tracking-tight group-hover:opacity-85 transition">욜로티켓</span>
       </a>
 
       <!-- 상단 메뉴 목록 -->
@@ -111,7 +121,7 @@
       <div class="text-center space-y-5">
         <h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-tight">
           소액결제 현금화 전문<br />
-          <span class="gradient-text">욜로티켓</span>
+          <span class="yolo-font gradient-text text-5xl md:text-6xl font-normal inline-block mt-1">욜로티켓</span>
         </h1>
 
         <p class="text-sm md:text-base text-slate-600 font-medium leading-relaxed">
@@ -146,7 +156,7 @@
     <!-- 3. 고객이 신뢰하는 욜로티켓 (수치 및 핵심 가치 카드) -->
     <section class="space-y-8">
       <h2 class="text-2xl md:text-3xl font-black text-center gradient-text">
-        고객이 신뢰하는 욜로티켓
+        고객이 신뢰하는 <span class="yolo-font font-normal text-3xl md:text-4xl">욜로티켓</span>
       </h2>
 
       <!-- 상단 4개 통계 카드 -->
@@ -206,7 +216,7 @@
     <!-- 4. 욜로티켓 서비스 소개 (안내 이미지 카드 영역) -->
     <section class="text-center space-y-6">
       <h2 class="text-2xl md:text-3xl font-black text-slate-900">
-        욜로티켓 서비스 소개
+        <span class="yolo-font font-normal text-3xl md:text-4xl">욜로티켓</span> 서비스 소개
       </h2>
 
       <div class="max-w-xl mx-auto">
@@ -227,7 +237,7 @@
           </div>
         </div>
         <p class="text-xs text-slate-500 mt-3 font-medium">
-          욜로티켓의 빠르고 안전한 소액결제 현금화 과정을 확인해보세요
+          <span class="yolo-font text-sm text-slate-700">욜로티켓</span>의 빠르고 안전한 소액결제 현금화 과정을 확인해보세요
         </p>
       </div>
     </section>
@@ -320,7 +330,7 @@
     <!-- 6. 욜로티켓만의 특별한 장점 -->
     <section class="space-y-8">
       <h2 class="text-2xl md:text-3xl font-black text-center gradient-text">
-        욜로티켓만의 특별한 장점
+        <span class="yolo-font font-normal text-3xl md:text-4xl">욜로티켓</span>만의 특별한 장점
       </h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
@@ -426,10 +436,10 @@
     <section class="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-10 card-shadow border-2 border-rose-100/80 space-y-8">
       <div class="text-center space-y-2">
         <h2 class="text-2xl md:text-3xl font-black text-slate-900">
-          욜로티켓 소액결제 미납 정책 솔루션
+          <span class="yolo-font font-normal text-3xl md:text-4xl">욜로티켓</span> 소액결제 미납 정책 솔루션
         </h2>
         <p class="text-xs text-slate-500 leading-relaxed">
-          욜로티켓의 노하우로 <strong class="text-slate-700">정책 준수 범위 내</strong>에서 소액결제 미납 상태여도 <strong class="text-slate-700">진행 가능한 결제 루트</strong>를 안내합니다.<br />
+          <span class="yolo-font text-sm text-slate-700">욜로티켓</span>의 노하우로 <strong class="text-slate-700">정책 준수 범위 내</strong>에서 소액결제 미납 상태여도 <strong class="text-slate-700">진행 가능한 결제 루트</strong>를 안내합니다.<br />
           즉시 가능한 옵션부터 한도 회복 전 <strong class="text-slate-700">대안 라우팅</strong>까지 케이스별 솔루션을 제공합니다.
         </p>
       </div>
@@ -510,7 +520,7 @@
             <span>소액결제 현금화는 안전한가요?</span>
           </h3>
           <p class="text-xs text-slate-600 leading-relaxed pl-6">
-            네, 욜로티켓은 통신사 정책을 철저히 준수하며 합법적인 방식으로 소액결제 현금화를 진행합니다.<br />
+            네, <span class="yolo-font text-sm text-slate-800">욜로티켓</span>은 통신사 정책을 철저히 준수하며 합법적인 방식으로 소액결제 현금화를 진행합니다.<br />
             개인정보는 철저히 보호되며, 수년간 무사고로 운영 중인 신뢰할 수 있는 업체입니다.
           </p>
         </div>
@@ -521,7 +531,7 @@
             <span>소액결제 현금화 지급률은 어떻게 되나요?</span>
           </h3>
           <p class="text-xs text-slate-600 leading-relaxed pl-6">
-            욜로티켓은 업계 최고 수준인 최대 90%의 지급률을 제공합니다.<br />
+            <span class="yolo-font text-sm text-slate-800">욜로티켓</span>은 업계 최고 수준인 최대 90%의 지급률을 제공합니다.<br />
             거래 금액과 고객님의 상황에 따라 추가 혜택도 가능하니 상담 시 문의해 주세요.
           </p>
         </div>
@@ -570,7 +580,7 @@
     <section id="info-fee" class="max-w-4xl mx-auto bg-white/80 backdrop-blur rounded-3xl p-8 md:p-10 card-shadow border border-white grid grid-cols-1 md:grid-cols-2 gap-8 items-center scroll-mt-20">
       <div class="space-y-4">
         <h2 class="text-2xl md:text-3xl font-black gradient-text">
-          정보이용료 현금화도 "욜로티켓"
+          정보이용료 현금화도 "<span class="yolo-font font-normal text-3xl md:text-4xl">욜로티켓</span>"
         </h2>
         <p class="text-xs text-slate-600 leading-relaxed">
           게임, 콘텐츠 구매에 사용하는 정보이용료도 쉽고 빠르게 현금으로 전환하세요. 소액결제와 동일하게 최대 90% 지급률과 5분 내 신속한 입금 서비스를 제공합니다.
@@ -621,7 +631,7 @@
         언제든지 24시간 편하게 문의해주세요
       </h2>
       <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
-        욜로티켓과 함께라면 안전하고 빠른 소액결제 현금화가 가능합니다.<br />
+        <span class="yolo-font text-base text-slate-800">욜로티켓</span>과 함께라면 안전하고 빠른 소액결제 현금화가 가능합니다.<br />
         365일 24시간 언제든지 상담 가능합니다.
       </p>
       <div class="pt-2">
@@ -638,7 +648,7 @@
 
   <!-- 12. 하단 푸터 -->
   <footer class="border-t border-purple-200/60 py-8 text-center text-xs text-slate-500 space-y-1.5">
-    <p class="font-bold text-slate-700">© 2026 욜로티켓. All rights reserved.</p>
+    <p class="font-bold text-slate-700">© 2026 <span class="yolo-font text-sm">욜로티켓</span>. All rights reserved.</p>
     <p class="text-[11px] text-slate-500">
       <i class="fa-solid fa-wand-magic-sparkles text-purple-400 mr-1"></i>
       안전하고 빠른 소액결제 현금화
