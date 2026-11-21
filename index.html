@@ -44,6 +44,14 @@
     .card-shadow {
       box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.08), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
     }
+    /* yoloticket_hero.png 중앙의 강아지 캐릭터만 상단 로고 아이콘으로 깔끔하게 크롭 */
+    .dog-avatar-crop {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 54% 46%;
+      transform: scale(4.2);
+    }
   </style>
 </head>
 <body class="min-h-screen antialiased selection:bg-purple-200 selection:text-purple-900">
@@ -51,13 +59,13 @@
   <!-- 1. 상단 고정 네비게이션 헤더 -->
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-purple-100/80">
     <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-      <!-- 좌측 욜로티켓 로고 영역 -->
-      <a href="/" class="flex items-center gap-2">
-        <img src="/yoloticket_logo.png" alt="욜로티켓" class="h-9 w-auto object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="hidden items-center gap-1.5 font-black text-xl tracking-tight text-slate-900">
-          <span class="w-7 h-7 rounded-lg bg-gradient-to-tr from-indigo-600 to-purple-500 text-white flex items-center justify-center text-sm shadow-sm">Y</span>
-          <span>욜로티켓</span>
+      <!-- 좌측 욜로티켓 로고 영역 (강아지 캐릭터 아이콘 + 욜로티켓) -->
+      <a href="/" class="flex items-center gap-2 group">
+        <div class="w-9 h-9 rounded-full overflow-hidden border-2 border-purple-200 bg-white shadow-sm flex items-center justify-center flex-shrink-0">
+          <img src="/yoloticket_hero.png" alt="욜로티켓 강아지 로고" class="dog-avatar-crop" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <span class="hidden w-full h-full bg-gradient-to-tr from-indigo-600 to-purple-500 text-white items-center justify-center text-sm font-black">Y</span>
         </div>
+        <span class="font-black text-xl tracking-tight text-slate-900 group-hover:text-purple-600 transition">욜로티켓</span>
       </a>
 
       <!-- 상단 메뉴 목록 -->
@@ -89,17 +97,15 @@
 
     <!-- 2. 메인 히어로 섹션 -->
     <section class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 pt-4">
-      <!-- 좌측 메인 캐릭터/로고 이미지 영역 -->
-      <div class="w-48 md:w-64 flex-shrink-0 flex justify-center">
-        <img src="/yoloticket_hero.png" alt="욜로티켓 대표 이미지" class="w-full h-auto object-contain drop-shadow-md" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-        <div class="hidden w-48 h-48 rounded-3xl bg-white/80 border-2 border-dashed border-purple-200 flex-col items-center justify-center text-center p-4 shadow-sm">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-500 text-white flex items-center justify-center text-2xl font-black mb-2 shadow">
-            YOLO
-          </div>
-          <span class="text-xs font-bold text-purple-700">욜로티켓 이미지 영역</span>
-          <span class="text-[11px] text-slate-400 mt-0.5">yoloticket_hero.png</span>
+      <!-- 좌측 메인 배너 이미지 영역 (클릭 시 채널톡 바로 연결) -->
+      <a href="https://yoloticket.channel.io" target="_blank" rel="noopener noreferrer" title="클릭시 채널톡 바로 문의!" class="w-60 md:w-72 flex-shrink-0 flex flex-col items-center group cursor-pointer">
+        <div class="rounded-2xl overflow-hidden shadow-lg border-2 border-white bg-white transition duration-300 transform group-hover:scale-105 group-hover:shadow-xl">
+          <img src="/yoloticket_hero.png" alt="욜로티켓 365일 24시간 문의가능 - 클릭시 채널톡 바로 문의" class="w-full h-auto object-contain block" />
         </div>
-      </div>
+        <span class="mt-2.5 text-[11px] font-bold text-purple-700 bg-white/90 px-3 py-1 rounded-full shadow-sm border border-purple-100 group-hover:bg-purple-600 group-hover:text-white transition">
+          <i class="fa-solid fa-hand-pointer mr-1"></i>이미지 클릭 시 채널톡 바로 연결
+        </span>
+      </a>
 
       <!-- 우측 메인 타이틀 & 버튼 -->
       <div class="text-center space-y-5">
@@ -115,7 +121,6 @@
 
         <!-- 채널톡 상담 & 이용후기 버튼 -->
         <div class="flex flex-wrap items-center justify-center gap-3 pt-1">
-          <!-- [수정필요 1] 아래 href 주소에 채널톡 링크 입력 -->
           <a href="https://yoloticket.channel.io" target="_blank" rel="noopener noreferrer" class="channel-btn text-white font-extrabold px-6 py-3 rounded-xl text-sm flex items-center gap-2 shadow-md transition transform hover:-translate-y-0.5">
             <span class="bg-white text-indigo-600 w-5 h-5 rounded-full flex items-center justify-center text-xs shadow-sm">
               <i class="fa-solid fa-comment-dots"></i>
@@ -483,7 +488,6 @@
       </div>
 
       <div class="text-center pt-2">
-        <!-- [수정필요 2] 아래 href 주소에 채널톡 링크 입력 -->
         <a href="https://yoloticket.channel.io" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 channel-btn text-white font-extrabold text-xs px-6 py-3 rounded-xl shadow transition">
           <span class="bg-white text-indigo-600 w-4 h-4 rounded-full flex items-center justify-center text-[10px]">
             <i class="fa-solid fa-comment-dots"></i>
@@ -621,7 +625,6 @@
         365일 24시간 언제든지 상담 가능합니다.
       </p>
       <div class="pt-2">
-        <!-- [수정필요 3] 아래 href 주소에 채널톡 링크 입력 -->
         <a href="https://yoloticket.channel.io" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 channel-btn text-white font-extrabold text-sm px-8 py-3.5 rounded-xl shadow-md transition transform hover:-translate-y-0.5">
           <span class="bg-white text-indigo-600 w-5 h-5 rounded-full flex items-center justify-center text-xs shadow-sm">
             <i class="fa-solid fa-comment-dots"></i>
@@ -644,7 +647,6 @@
   </footer>
 
   <!-- 13. 우측 하단 채널톡 상담 플로팅 배너 -->
-  <!-- [수정필요 4] 아래 href 주소에 채널톡 링크 입력 -->
   <a href="https://yoloticket.channel.io" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 px-4 py-3 rounded-2xl channel-btn text-white shadow-xl flex items-center gap-2.5 transition transform hover:scale-105 border border-indigo-400/50">
     <span class="bg-white text-indigo-600 w-8 h-8 rounded-xl flex items-center justify-center text-base shadow-sm">
       <i class="fa-solid fa-comment-dots"></i>
