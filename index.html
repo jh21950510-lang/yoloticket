@@ -42,10 +42,13 @@
       color: #1e293b;
     }
 
-    /* '욜로티켓' 전용 귀여운 이미지 스타일 폰트 */
+    /* '욜로티켓' 전용 귀여운 이미지 스타일 폰트 (획 잘림 방지 여백 및 줄간격 적용) */
     .yolo-font {
       font-family: 'OngleipKonkon', 'Cafe24Ssurround', cursive, sans-serif;
-      letter-spacing: 0.01em;
+      letter-spacing: 0.02em;
+      line-height: 1.3;
+      padding: 0.12em 0.14em;
+      display: inline-block;
     }
 
     .gradient-text {
@@ -85,12 +88,12 @@
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-purple-100/80">
     <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
       <!-- 좌측 욜로티켓 로고 영역 (강아지 캐릭터 아이콘 + 이미지 폰트 욜로티켓) -->
-      <a href="/" class="flex items-center gap-2.5 group">
+      <a href="/" class="flex items-center gap-2 group">
         <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-purple-200 bg-white shadow-sm flex items-center justify-center flex-shrink-0">
           <img src="/yoloticket_hero.png" alt="욜로티켓 강아지 로고" class="dog-avatar-crop" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
           <span class="hidden w-full h-full bg-gradient-to-tr from-indigo-600 to-purple-500 text-white items-center justify-center text-sm font-black">Y</span>
         </div>
-        <span class="yolo-font gradient-text text-3xl md:text-[32px] leading-none group-hover:opacity-85 transition">욜로티켓</span>
+        <span class="yolo-font gradient-text text-3xl md:text-[32px] tracking-tight group-hover:opacity-85 transition">욜로티켓</span>
       </a>
 
       <!-- 상단 메뉴 목록 -->
@@ -136,7 +139,7 @@
       <div class="text-center space-y-5">
         <h1 class="text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-tight">
           소액결제 현금화 전문<br />
-          <span class="yolo-font gradient-text text-6xl md:text-7xl font-normal inline-block mt-1 leading-none">욜로티켓</span>
+          <span class="yolo-font gradient-text text-6xl md:text-7xl font-normal">욜로티켓</span>
         </h1>
 
         <p class="text-sm md:text-base text-slate-600 font-medium leading-relaxed">
