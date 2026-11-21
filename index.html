@@ -14,7 +14,8 @@
   <meta property="og:url" content="https://phone-bankpay.com" />
   <meta property="og:site_name" content="욜로티켓" />
 
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link id="dynamic-favicon" rel="icon" type="image/png" href="/yoloticket_hero.png" />
+  <link id="dynamic-apple-icon" rel="apple-touch-icon" href="/yoloticket_hero.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
@@ -692,6 +693,39 @@
     mobileMenuBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
+    // yoloticket_hero.png에서 강아지 캐릭터만 원형 파비콘으로 자동 생성
+    (function createDogFavicon() {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.src = '/yoloticket_hero.png';
+      img.onload = function () {
+        const size = 64;
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+
+        // 원형 클리핑 및 흰색 배경
+        ctx.beginPath();
+        ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, size, size);
+
+        // 강아지 캐릭터 위치만 정확히 확대해서 중앙 배치
+        const cropSize = img.width * 0.19;
+        const sx = img.width * 0.545 - cropSize / 2;
+        const sy = img.height * 0.432 - cropSize / 2;
+        ctx.drawImage(img, sx, sy, cropSize, cropSize, 0, 0, size, size);
+
+        const dataUrl = canvas.toDataURL('image/png');
+        const favicon = document.getElementById('dynamic-favicon');
+        const appleIcon = document.getElementById('dynamic-apple-icon');
+        if (favicon) favicon.href = dataUrl;
+        if (appleIcon) appleIcon.href = dataUrl;
+      };
+    })();
   </script>
 </body>
 </html>
